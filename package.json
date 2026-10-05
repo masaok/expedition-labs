@@ -1,6 +1,7 @@
 {
   "name": "expedition-labs",
   "version": "0.1.0",
+  "description": "An open source collection of tools, resources, references, and guides.",
   "private": true,
   "scripts": {
     "dev": "next dev",

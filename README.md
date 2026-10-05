@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Expedition Labs
 
-## Getting Started
+An open source collection of tools, resources, references, and guides.
 
-First, run the development server:
+Everything here is free to use, learn from, and build on. The project is in its early days, so expect the content to grow and the structure to shift.
+
+## What's here
+
+- **Tools**: small, focused utilities you can use directly in the browser.
+- **Resources**: curated links and materials worth keeping around.
+- **References**: quick lookups and cheat sheets.
+- **Guides**: step-by-step walkthroughs.
+
+## Development
+
+The site is built with [Next.js](https://nextjs.org) (App Router), React, TypeScript, and Tailwind CSS, and uses [pnpm](https://pnpm.io) as its package manager.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the site. Pages live under `src/app` and reload as you edit them.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command      | What it does                     |
+| ------------ | -------------------------------- |
+| `pnpm build` | Build the site for production    |
+| `pnpm start` | Serve the production build       |
+| `pnpm lint`  | Run ESLint                       |
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome, whether that's a new tool, a guide, a correction, or an idea.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Open an [issue](https://github.com/masaok/expedition-labs/issues) to discuss anything substantial before you start.
+2. Fork the repo and create a branch for your change.
+3. Make sure `pnpm lint` and `pnpm build` pass.
+4. Open a pull request describing what you changed and why.
