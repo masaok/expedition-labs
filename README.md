@@ -38,3 +38,7 @@ Contributions are welcome, whether that's a new tool, a guide, a correction, or 
 2. Fork the repo and create a branch for your change.
 3. Make sure `pnpm lint` and `pnpm build` pass.
 4. Open a pull request describing what you changed and why.
+
+## License
+
+Released under the [MIT License](LICENSE).
