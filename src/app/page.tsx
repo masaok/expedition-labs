@@ -42,7 +42,7 @@ export default function Home() {
                 key={discipline.name}
                 className="grid gap-x-10 gap-y-5 border-t border-line py-10 lg:grid-cols-12"
               >
-                <h3 className="display text-2xl lg:col-span-3">
+                <h3 className="display text-lg lg:col-span-3">
                   {discipline.name}
                 </h3>
                 <div className="lg:col-span-5">
@@ -51,7 +51,7 @@ export default function Home() {
                 </div>
                 <dl className="lg:col-span-4 lg:text-right">
                   <dt className="text-sm text-steel">{discipline.metric}</dt>
-                  <dd className="display mt-2 text-xl normal-case tabular-nums sm:text-2xl">
+                  <dd className="mt-2 text-xl font-medium tabular-nums">
                     {discipline.value}
                   </dd>
                 </dl>
@@ -119,7 +119,7 @@ export default function Home() {
                     {outcome.note}
                   </span>
                 </dt>
-                <dd className="display order-1 text-[clamp(3rem,6vw,5rem)] font-light tabular-nums">
+                <dd className="order-1 text-[clamp(2.5rem,4vw,3.5rem)] leading-none font-light tracking-tight tabular-nums">
                   {outcome.value}
                 </dd>
               </div>
@@ -140,7 +140,7 @@ export default function Home() {
                 className="flex flex-col bg-void py-10 lg:px-8 lg:first:pl-0 lg:last:pr-0"
               >
                 <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="display text-2xl">{engagement.name}</h3>
+                  <h3 className="display text-lg">{engagement.name}</h3>
                   <p className="text-sm text-limb">{engagement.tag}</p>
                 </div>
                 <p className="mt-3 text-sm text-steel">{engagement.terms}</p>

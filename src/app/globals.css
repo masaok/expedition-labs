@@ -25,7 +25,14 @@ body {
   outline-offset: 3px;
 }
 
-/* Archivo's width axis, pushed wide: the one display voice on the page. */
+/* Headings: regular-width Archivo in sentence case. */
+.headline {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+/* Archivo's width axis, pushed wide. Small sizes only: brand, buttons, labels. */
 .display {
   font-stretch: 125%;
   font-weight: 500;

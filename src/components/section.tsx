@@ -17,11 +17,11 @@ export function Section({ id, label, title, lede, children }: SectionProps) {
     >
       <div className="mx-auto w-full max-w-[84rem] px-6 py-20 sm:px-10 lg:py-32">
         <div className="grid gap-x-10 gap-y-6 lg:grid-cols-12">
-          <p className="text-sm text-steel lg:col-span-3 lg:pt-3">{label}</p>
+          <p className="text-sm text-steel lg:col-span-3 lg:pt-2">{label}</p>
           <div className="lg:col-span-9">
             <h2
               id={`${id}-title`}
-              className="display max-w-[22ch] text-[clamp(1.75rem,3.6vw,3.25rem)] text-balance"
+              className="headline max-w-[26ch] text-[clamp(1.625rem,2.5vw,2.25rem)] text-balance"
             >
               {title}
             </h2>

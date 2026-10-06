@@ -48,15 +48,15 @@ export function Hero() {
 
       <div className="relative mx-auto flex w-full max-w-[84rem] flex-1 flex-col justify-center px-6 pt-32 pb-[calc(clamp(7rem,19vw,18rem)+5rem)] sm:px-10">
         <p className="text-sm text-steel">Agentic product engineering</p>
-        <h1 className="display mt-6 text-[clamp(1.5rem,4.3vw,4rem)]">
+        <h1 className="headline mt-6 text-[clamp(1.875rem,3.4vw,3rem)]">
           <span className="block">Ship software</span>
-          <del className="mt-[0.2em] grid grid-cols-[1.1em_1fr] text-steel/70 decoration-1">
+          <del className="mt-[0.2em] grid grid-cols-[1em_1fr] text-steel/70 decoration-1">
             <span aria-hidden="true" className="no-underline">
               −
             </span>
             <span>at the speed of meetings</span>
           </del>
-          <ins className="mt-[0.2em] grid grid-cols-[1.1em_1fr] no-underline">
+          <ins className="mt-[0.2em] grid grid-cols-[1em_1fr] no-underline">
             <span aria-hidden="true" className="text-limb">
               +
             </span>

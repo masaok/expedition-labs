@@ -68,7 +68,7 @@ export function MobileMenu() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="display block py-5 text-xl"
+                  className="display block py-5 text-base"
                 >
                   {link.label}
                 </a>
