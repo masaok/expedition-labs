@@ -1,26 +1,147 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-void: #000000;
+  --color-hull: #0b0e13;
+  --color-line: #222932;
+  --color-steel: #8d96a3;
+  --color-regolith: #eef1f4;
+  --color-limb: #8ec5ff;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-void);
+  color: var(--color-regolith);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-limb);
+  outline-offset: 3px;
+}
+
+/* Archivo's width axis, pushed wide: the one display voice on the page. */
+.display {
+  font-stretch: 125%;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Hero horizon: a planet's limb that doubles as the idea-to-launch timeline. */
+@property --sweep {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 37deg;
+}
+
+.limb {
+  --r: 120vw;
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: clamp(7rem, 19vw, 18rem);
+}
+
+.limb-planet,
+.limb-sweep {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: calc(var(--r) * 2);
+  aspect-ratio: 1;
+  translate: -50% 0;
+  border-radius: 50%;
+}
+
+.limb-planet {
+  background: radial-gradient(
+    circle at 50% 0%,
+    #0f1e33 0%,
+    #060a11 14%,
+    #000000 32%
+  );
+  box-shadow:
+    0 0 0 1px rgb(142 197 255 / 0.25),
+    0 -1px 70px rgb(142 197 255 / 0.2),
+    inset 0 28px 70px -24px rgb(142 197 255 / 0.28);
+}
+
+.limb-sweep {
+  border: 2px solid var(--color-limb);
+  filter: drop-shadow(0 0 6px var(--color-limb));
+  mask-image: conic-gradient(
+    from -19deg,
+    #000 var(--sweep),
+    transparent var(--sweep)
+  );
+  animation: limb-sweep 2.4s 0.4s linear both;
+}
+
+.limb-node {
+  position: absolute;
+  left: calc(50% + var(--r) * sin(var(--a)));
+  top: calc(var(--r) * (1 - cos(var(--a))));
+  translate: -50% -50%;
+  rotate: var(--a);
+  animation: limb-ignite 0.5s var(--d) ease-out both;
+}
+
+.limb-dot {
+  display: block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: var(--color-regolith);
+  box-shadow: 0 0 0 4px rgb(0 0 0), 0 0 14px 2px var(--color-limb);
+}
+
+.limb-label {
+  position: absolute;
+  bottom: calc(100% + 0.75rem);
+  left: 50%;
+  translate: -50% 0;
+  white-space: nowrap;
+}
+
+@media (width < 40rem) {
+  .limb {
+    --r: 100vw;
+  }
+}
+
+@keyframes limb-sweep {
+  from {
+    --sweep: 0deg;
+  }
+}
+
+@keyframes limb-ignite {
+  from {
+    opacity: 0.25;
+    filter: grayscale(1) brightness(0.6);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .limb-sweep,
+  .limb-node {
+    animation: none;
+  }
 }
